@@ -79,5 +79,15 @@
 		<artifactId>slf4j-api</artifactId>
 		<version>1.7.7</version>
 	</dependency>
+	<dependency>
+		<groupId>org.testng</groupId>
+		<artifactId>testng</artifactId>
+		<version>6.8.21</version>
+	</dependency>
+	<dependency>
+		<groupId>com.beust</groupId>
+		<artifactId>jcommander</artifactId>
+		<version>1.48</version>
+	</dependency>
 </dependencies> 
 </project>

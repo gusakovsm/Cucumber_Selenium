@@ -35,7 +35,7 @@ public class LoginPageSteps {
     @Given("^I want to open Orchestrator$")
     public void i_want_to_open_Orchestrator() throws Throwable {
     	driver.openBrowser("https://demo.uipath.com/account/login");
-    	driver.waitForElementPresent(By.xpath("//h4[@class='login-text']"));
+    	driver.waitForElementPresent(loginPage.loginHeaderText);
     }
     
     @Given("^I see \"([^\"]*)\" page title$")
@@ -70,8 +70,8 @@ public class LoginPageSteps {
     
     @Then("^I see error message \"([^\"]*)\"$")
     public void i_see_error_message(String errorMessage) throws Throwable {
-    	driver.waitForElementPresent(By.xpath("//label[@class='label label-warning ng-star-inserted']"));
-    	driver.findElement(By.xpath("//label[@class='label label-warning ng-star-inserted']")).getText().contains(errorMessage);
+    	driver.waitForElementPresent(loginPage.fieldErrorMessage);
+    	loginPage.fieldErrorMessage.getText().contains(errorMessage);
     }
     
     @Then("^I LogOut$")

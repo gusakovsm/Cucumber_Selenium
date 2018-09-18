@@ -20,7 +20,7 @@ public class WebDriverLib implements WebDriver{
 	private static WebDriverWait wait;
 
 	public void openBrowser(String URL) {
-			System.setProperty("webdriver.chrome.driver", "/Cucumber_Selenium/src/test/resources/drivers/ChromeDriver/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/drivers/ChromeDriver/chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.get(URL);

@@ -49,10 +49,11 @@ public class AssetsPageSteps {
     	driver.waitForInvisibilityOfElement(assetPage.buttonAddAsset);
     }
     
-    @Then("^I search created asset by asset name \"([^\"]*)\" and check that asset with this value exist$")
+    @SuppressWarnings("unchecked")
+	@Then("^I search created asset by asset name \"([^\"]*)\" and check that asset with this value exist$")
     public void i_search_created_asset_by_value(String searchParameter) throws Throwable {
     	assetPage.SearchAssets(searchParameter);
-    	List<WebElement> listElem = driver.findElements(By.xpath("//tr[@class='ui-grid-row ng-star-inserted']"));
+    	List<WebElement> listElem = assetPage.tableAssets;
         assertEquals(true, listElem.size()>0);
         Boolean result = null;
         for (Integer i=0; i<listElem.size(); i++) {
@@ -62,7 +63,7 @@ public class AssetsPageSteps {
         	}
         }
         assertEquals(true, result);
-        driver.findElement(By.xpath("//mat-icon[@svgicon='uipath:StatusCanceling']")).click();
+        assetPage.buttonSearchCancel.click();
     }
 
 

@@ -1,5 +1,7 @@
 package pageObject;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +9,7 @@ import org.openqa.selenium.support.How;
 
 import reuseLib.WebDriverLib;
 
-public class AssetsPage extends Page{
+public class AssetsPage<WebElements> extends Page{
 
 	private WebDriverLib driver;
 	
@@ -29,7 +31,11 @@ public class AssetsPage extends Page{
 	public WebElement buttonCancel;
 	@FindBy(how = How.XPATH, using = "//div[@class='ui-select-container dropdown open ng-star-inserted']")
 	public WebElement fieldType;
-	
+	@FindBy(how = How.XPATH, using = "//tr[@class='ui-grid-row ng-star-inserted']")
+	public List<WebElement> tableAssets;
+	@FindBy(how = How.XPATH, using = "//mat-icon[@svgicon='uipath:StatusCanceling']")
+	public WebElement buttonSearchCancel;
+
 	
 	public AssetsPage() {
 		super();

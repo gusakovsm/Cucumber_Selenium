@@ -26,6 +26,10 @@ public class LoginPage extends Page{
 	public WebElement buttonResetPassword;
 	@FindBy(how = How.XPATH, using = "//a[@class='toc-link ng-star-inserted']")
 	public WebElement buttonLicenseAgreement;
+	@FindBy(how = How.XPATH, using = "//h4[@class='login-text']")
+	public WebElement loginHeaderText;
+	@FindBy(how = How.XPATH, using = "//label[@class='label label-warning ng-star-inserted']")
+	public WebElement fieldErrorMessage;
 	
 	
 	public LoginPage() {
